@@ -1,0 +1,32 @@
+[
+  {
+    "id": "TC001",
+    "title": "analyze product trust and sentiment with valid url",
+    "description": "Test the /analyze POST endpoint with a valid product URL to verify it returns a complete analysis including product info, sentiment breakdown, trust scores, and recommendation."
+  },
+  {
+    "id": "TC002",
+    "title": "analyze product trust and sentiment with missing url",
+    "description": "Test the /analyze POST endpoint with a request missing the URL field to ensure it returns a 400 Bad Request error with an appropriate error message."
+  },
+  {
+    "id": "TC003",
+    "title": "analyze product trust and sentiment with invalid url format",
+    "description": "Test the /analyze POST endpoint with an invalid URL format to verify the system handles it gracefully and returns a 400 error."
+  },
+  {
+    "id": "TC004",
+    "title": "analyze product trust and sentiment with unsupported ecommerce platform url",
+    "description": "Test the /analyze POST endpoint with a URL from an unsupported e-commerce platform to check if the system returns a meaningful error or fallback response."
+  },
+  {
+    "id": "TC005",
+    "title": "analyze product trust and sentiment with internal server error simulation",
+    "description": "Simulate an internal server error during analysis and verify the /analyze POST endpoint returns a 500 Internal Server Error with an appropriate error message."
+  },
+  {
+    "id": "TC006",
+    "title": "get main web interface page load",
+    "description": "Test the / GET endpoint to ensure it returns the main HTML page successfully with a 200 status code."
+  }
+]

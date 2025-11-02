@@ -1,0 +1,308 @@
+/* Custom CSS for AI Product Trust Analyzer */
+
+:root {
+    --primary-color: #007bff;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+    border-bottom: none;
+    font-weight: 600;
+}
+
+/* Trust Score Circle */
+.trust-score-circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.trust-score-circle svg {
+    transform: rotate(-90deg);
+}
+
+.trust-score-circle .progress-ring-circle {
+    stroke: #e9ecef;
+    stroke-width: 8;
+    fill: transparent;
+}
+
+.trust-score-circle .progress-ring-progress {
+    stroke: var(--primary-color);
+    stroke-width: 8;
+    fill: transparent;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.5s ease;
+}
+
+.trust-score-circle .score-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Recommendation Badge */
+.recommendation-badge {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.recommendation-badge.bg-success {
+    background-color: var(--success-color) !important;
+}
+
+.recommendation-badge.bg-warning {
+    background-color: var(--warning-color) !important;
+    color: var(--dark-color) !important;
+}
+
+.recommendation-badge.bg-danger {
+    background-color: var(--danger-color) !important;
+}
+
+/* Sentiment Bars */
+.sentiment-bar {
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.sentiment-bar:hover {
+    transform: scale(1.02);
+}
+
+.sentiment-bar.positive {
+    background: linear-gradient(45deg, #28a745, #20c997);
+}
+
+.sentiment-bar.neutral {
+    background: linear-gradient(45deg, #6c757d, #adb5bd);
+}
+
+.sentiment-bar.negative {
+    background: linear-gradient(45deg, #dc3545, #e74c3c);
+}
+
+/* Component Score Bars */
+.component-score {
+    margin-bottom: 20px;
+}
+
+.component-score .score-label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.component-score .progress {
+    height: 25px;
+    border-radius: 12px;
+    background-color: #e9ecef;
+}
+
+.component-score .progress-bar {
+    border-radius: 12px;
+    transition: width 0.6s ease;
+}
+
+/* Product Info Styles */
+.product-info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.product-info-item:last-child {
+    border-bottom: none;
+}
+
+.product-info-item .label {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.product-info-item .value {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.loading-pulse {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .trust-score-circle {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .trust-score-circle .score-text {
+        font-size: 1.5rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .input-group-lg .form-control {
+        font-size: 1rem;
+    }
+}
+
+/* Custom Button Styles */
+.btn-primary {
+    background: linear-gradient(45deg, var(--primary-color), #0056b3);
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #0056b3, var(--primary-color));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+}
+
+/* Alert Styles */
+.alert {
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+/* Footer Styles */
+footer {
+    margin-top: auto;
+}
+
+/* Smooth Transitions */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Detailed Sentiment Cards */
+.sentiment-detail-card {
+    border-left: 4px solid;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+
+.sentiment-detail-card.positive {
+    border-left-color: var(--success-color);
+}
+
+.sentiment-detail-card.neutral {
+    border-left-color: var(--warning-color);
+}
+
+.sentiment-detail-card.negative {
+    border-left-color: var(--danger-color);
+}
+
+/* Platform Badge */
+.platform-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.platform-badge.amazon {
+    background-color: #ff9900;
+    color: white;
+}
+
+.platform-badge.daraz {
+    background-color: #e91e63;
+    color: white;
+}
+
+.platform-badge.ebay {
+    background-color: #e53238;
+    color: white;
+}
+
+.platform-badge.generic {
+    background-color: #6c757d;
+    color: white;
+}
